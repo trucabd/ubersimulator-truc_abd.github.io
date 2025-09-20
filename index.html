@@ -247,7 +247,7 @@
                     <p>Nous serions ravis de vous entendre !</p>
                     <img src="https://i.postimg.cc/grFXX0Nw/Copilot-20250919-110957.png" width="270" height="150" alt="Image exemple">
                     <a href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox?compose=new" target="_blank">
-                    <p>Contactez-nous via notre email : tasnim.akliiii@gmail.com</p>
+                    <p>Contactez-nous via notre email : ubersimulator@sim.fr</p>
                     </a>
                     <p>ou par téléphone : +33 6 52 34 12 78</p>
                     <p>Notre service client est disponible 24/7 pour répondre à vos questions.</p>
@@ -267,6 +267,7 @@
            
         }
     </script>
+
     <script>
         function goToFAQ() {
         const content = document.getElementById('content');
@@ -316,6 +317,39 @@
     }, 500);
 }
 </script>
+        <script>
+        function goToCollab() {
+            const content = document.getElementById('content');
+            content.classList.remove('show'); // commence le fondu
+            setTimeout(() => {
+                content.innerHTML = `
+                    <div class="faq-item">
+                    
+                    
+                    <h1>Collaboration</h1>
+                    </div>
+                    <br> <!-- saut de ligne -->
+                    <br> <!-- saut de ligne -->
+                    <div class="faq-item">
+                    <p>Nous sommes ouverts à des collaborations passionnantes !</p>
+                    <p>Si vous êtes un influenceur, un créateur de contenu ou une entreprise
+                    intéressé par une collaboration avec Uber Simulator, n'hésitez pas à nous contacter.</p>
+                    <p>Ensemble, nous pouvons créer des expériences uniques et mémorables pour nos
+                    utilisateurs.</p>
+                    <a href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox?compose=new" target="_blank">
+                    <p>Contactez-nous à l'adresse email suivante pour discuter des opportunités de collaboration : ubersimulator@sim.fr </p>
+                    </a>
+
+                    
+                    </div>
+                    <button class="arrow-btn" onclick="goToPage1()"> Return to Page 1 </button>  
+                    
+                    `;
+                    content.classList.add('show');
+            }, 500);
+           
+        }
+    </script>
 
          <div class="navbar">
             <button onclick="document.getElementById('menu').style.display =
@@ -329,6 +363,7 @@
                 <li onclick="goToAbout()">About </li>
                 <li onclick="goToContact()">Contact</li>
                 <li onclick="goToFAQ()" >FAQ</li>
+                <li onclick="goToCollab()">Collaboration</li>
             </ul>
         </div>
         <h1>Uber Simulator</h1>
@@ -399,7 +434,7 @@
                     <summary>Informations complémentaires : </summary>
                     <ul>
                         <li>Version actuelle : 1.0.5</li>
-                        <li>Jeu classé premier dans la catégorie Simulationsur l'App Store et Play Store</li>
+                        <li>Jeu classé premier dans la catégorie Simulation sur l'App Store et Play Store</li>
                         <li>Date de sortie : 15 Janvier 2025</li>
                         <li>Jeu conseillé et sponsorisé par <strong>Mastu</strong> et <strong>Inoxtag</strong></li>
                         <li>Meilleur jeu du premier semestre 2025</li>
@@ -596,6 +631,7 @@
                 <li onclick="goToAbout()">About </li>
                 <li onclick="goToContact()">Contact</li>
                 <li onclick="goToFAQ()" >FAQ</li>
+                <li onclick="goToCollab()">Collaboration</li>
             
             </ul>
         </div>
