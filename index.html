@@ -79,10 +79,10 @@
         }
         .navbar {
             position: fixed;
-            background: rgba(0,0,0,0.3); /* barre transparente */
-            padding: 4px;
+            background: rgba(0,0,0,0.3);
+            padding: 4px 20px; /* <-- espace à gauche/droite */
             display: flex;
-            justify-content: flex-end; /* bouton à droite */
+            justify-content: flex-end; /* reste à droite */
             top: 0;
             left: 0;
             width: 100%;
@@ -90,23 +90,25 @@
 }
 
         .navbar button {
-            background: rgba(0,0,0,0.3); /* petit carré transparent */
+            background: rgba(0,0,0,0.3);
             border: none;
-            height: 25px;
-            width: 25px; /* carré parfait */
-            
+            height: 30px;
+            width: auto; /* pour que le texte "Menu" rentre bien */
             border-radius: 5px;
             cursor: pointer;
-            display: flex; /* pour centrer l'image */
-            align-items: center; /* centre verticalement */
-            justify-content: center; /* centre horizontalement */
-            padding: 0; /* pas d'espace autour de l'image */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 10px; /* espace autour du texte ou icône */
+          
+            font-size: 14px;
+            margin-right: 10px; /* <-- espace par rapport au bord droit */
 }
 
         .navbar button img {
-            
-            width: 14px; /* taille de l’icône */
+            width: 16px;
             height: 12px;
+            margin-right: 5px;
 }
 
 
