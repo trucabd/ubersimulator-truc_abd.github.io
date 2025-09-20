@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Site à pages simulées</title>
+    <title>Uber Simulator</title>
     <style>
         body {
             font-family: 'Segoe UI', Arial, sans-serif;
@@ -79,21 +79,27 @@
         }
 
         .navbar {
-        position: relative;
+        position: fixed;
         background: rgba(0,0,0,0.3);
-        padding: 8px px;
+        padding: 8px 4px;
         display: flex;
         justify-content: flex-end;
+        
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+
     }
 
     .navbar button {
         font-size: 8px;
         padding: 2px 6px;
         cursor: pointer;
-        background: white;
+        background: rgba(0,0,0,0.3);
         border: none;
         border-radius: 5px;
-        color: white;
+        
     }
 
     /* Menu caché par défaut */
