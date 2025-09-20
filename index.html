@@ -77,33 +77,36 @@
         .fade.show {
             opacity: 1;
         }
-
         .navbar {
-        position: fixed;
-        background: rgba(0,0,0,0.3);
-        padding: 8px ;
-        display: flex;
-        justify-content: flex-end;
-        
-        top: 0;
-        left: 0;
-        width: 100%;
-        z-index: 1000;
+            position: fixed;
+            background: rgba(0,0,0,0.3); /* barre transparente */
+            padding: 8px;
+            display: flex;
+            justify-content: flex-end; /* bouton à droite */
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+}
 
-    }
+        .navbar button {
+            background: rgba(0,0,0,0.3); /* petit carré transparent */
+            border: none;
+            height: 25px;
+            width: 25px; /* carré parfait */
+            border-radius: 5px;
+            cursor: pointer;
+            display: flex; /* pour centrer l'image */
+            align-items: center; /* centre verticalement */
+            justify-content: center; /* centre horizontalement */
+            padding: 0; /* pas d'espace autour de l'image */
+}
 
-    .navbar button {
-        font-size: 8px;
-        padding: 2px 6px;
-        cursor: pointer;
-        background: rgba(0,0,0,0.3);
-        border: none;
-        height : 25px;
-        
+        .navbar button img {
+            width: 16px; /* taille de l’icône */
+            height: 16px;
+}
 
-        border-radius: 5px;
-        
-    }
 
     /* Menu caché par défaut */
     #menu {
