@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Site à pages simulées</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(65deg, magenta 100%, black 35%);
+            color: white;
+            text-align: center;
+            transition: background 0.5s ease;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 40px;
+        }
+        .arrow-btn {
+            display: inline-block;
+            font-size: 16px;
+            padding: 8px 16px;
+            background-color: black;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: fixed;      /* fixé par rapport à la fenêtre */
+            bottom: 20px;         /* distance du bas */
+            right: 20px;
+        }
+        .arrow-btn:hover {
+            background-color: white;
+            transform: translateX(5px);
+
+            
+            
+            
+        }
+        .back-link {
+            display: inline-block;
+            font-size: 16px;
+            padding: 8px 16px;
+            background-color: black;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: fixed;      /* fixé par rapport à la fenêtre */
+            bottom: 20px;         /* distance du bas */
+            right: 20px;
+        }
+        .back-link:hover {
+            background-color: white;
+            transform: translateX(-5px);
+            
+            
+        }
+        img {
+            max-width: 100%;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        ul {
+            text-align: left;
+            display: inline-block;
+        }
+        /* Animation de fondu */
+        .fade {
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+        .fade.show {
+            opacity: 1;
+        }
+
+        .navbar {
+        position: relative;
+        background: rgba(0,0,0,0.3);
+        padding: 8px px;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .navbar button {
+        font-size: 8px;
+        padding: 2px 6px;
+        cursor: pointer;
+        background: white;
+        border: none;
+        border-radius: 5px;
+        color: white;
+    }
+
+    /* Menu caché par défaut */
+    #menu {
+        display: none;
+        list-style: none;
+        margin: 0;
+        padding: 10px 0;
+        position: absolute;
+        top: 50px;
+        right: 20px;
+        background: linear-gradient(45deg, black 45%, white 100%);
+        color: grey;
+        border-radius: 5px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        width: 150px;
+        text-align: left;
+}
+
+/* Style normal des éléments */
+    #menu li {
+        padding: 8px 15px;
+        cursor: pointer;
+        border-radius: 5px; /* coins légèrement arrondis par défaut */
+        transition: all 0.35s ease; /* animation fluide */
+}
+
+/* Effet au survol */
+    #menu li:hover {
+        background: #f0f0f0;
+        border-radius: 12px; /* coins plus arrondis */
+        transform: translateX(5px); /* petit déplacement vers la droite */
+}
+    .container img {
+        height: 20%;
+        width: 20%;
+        border-radius: 12px;
+        transition: 0.35s ease;
+    }
+
+    .container img:hover {
+        transform: scale(1.26);
+    }
+   
+    body {
+        margin: 0;
+        height: 150vh;
+        background-image: url("https://i.postimg.cc/CKJyjyKm/une-voiture-incroyab.png"); /* chemin vers ton image */
+        background-size: cover; /* couvre tout l'écran */
+        background-position: center; /* centre l'image */
+        background-repeat: no-repeat; /* évite la répétition */
+}
+
+    .contenu {
+        color: white;
+        text-align: center;
+        padding-top: 20%;
+        background-color: rgba(0, 0, 0, 0.4); /* optionnel : assombrir pour lisibilité */
+
+}
+    .faq-item {
+        background-color: rgba(255, 255, 255, 0.1); /* fond semi-transparent */
+        border: 1px solid white; /* bordure blanche */
+        border-radius: 8px; /* coins arrondis */
+        padding: 15px;
+        margin: 15px 0;
+        transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+    .faq-item:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+        transform: scale(1.02);
+}
+    .install {
+        position: fixed;
+        width: 60vh;
+        
+        height: 10vh, 80px;
+        bottom: 0;       /* Collé en bas */
+        right: 0;        /* Collé à droite */
+        
+    }
+
+
+    
+
+
+
+    </style>
+</head>
+<body>
+    
+
+
+   
+
+    <div class="container fade show" id="content">
+        <!-- Page 1 -->
+        
+         <script>
+        function goToHome() {
+            const content = document.getElementById('content');
+            content.classList.remove('show'); // commence le fondu
+            setTimeout(() => {
+                content.innerHTML = `
+                    
+                    
+                    <img src="https://turbologo.com/articles/wp-content/uploads/2019/12/Uber-car.png" alt="Image exemple">
+                    <h1>Bienvenue sur la Page d'accueil</h1>
+                    <p>Voici un exemple de contenu enrichi :</p>
+                    <button class="arrow-btn" onclick="goToPage1()"> Page 1 </button>
+                    `;
+                    content.classList.add('show');
+            }, 500);
+           
+        }
+    </script>
+    <script>
+        function goToAbout() {
+            const content = document.getElementById('content');
+            content.classList.remove('show'); // commence le fondu
+            setTimeout(() => {
+                content.innerHTML = `
+                    <div class="faq-item">
+                    
+                    
+                    <h1>About Us</h1>
+                    <img src="https://i.postimg.cc/rpZV6W9c/ubersimulator.png" width="600" height="200" alt="Uber Simulator">
+                    <p>Uber Simulator est une application innovante qui vous permet de vivre l'expérience Uber directement depuis votre appareil. Que vous soyez un conducteur cherchant à maximiser vos revenus ou un passager souhaitant un trajet sûr et confortable, notre application est conçue pour répondre à vos besoins.</p>
+                    <p>Notre mission est de connecter les conducteurs et les passagers de manière efficace et sécurisée, tout en offrant une expérience utilisateur exceptionnelle.<strong>et parcourir le monde avec les meilleurs details possibles</strong></p>
+                    
+                    <p>Rejoignez-nous dans cette aventure et découvrez comment Uber Simulator peut transformer votre façon de voyager.</p>
+                    </div>
+                    <button class="arrow-btn" onclick="goToPage1()"> Return to Page 1 </button>  
+                    
+                    `;
+                    content.classList.add('show');
+            }, 500);
+           
+        }
+    </script>
+    <script>
+        function goToContact() {
+            const content = document.getElementById('content');
+            content.classList.remove('show'); // commence le fondu
+            setTimeout(() => {
+                content.innerHTML = `
+                    
+
+                    <h1>Contactez-Nous</h1>
+                    <p>Nous serions ravis de vous entendre !</p>
+                    <img src="https://i.postimg.cc/grFXX0Nw/Copilot-20250919-110957.png" width="270" height="150" alt="Image exemple">
+                    <a href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox?compose=new" target="_blank">
+                    <p>Contactez-nous via notre email : tasnim.akliiii@gmail.com</p>
+                    </a>
+                    <p>ou par téléphone : +33 6 52 34 12 78</p>
+                    <p>Notre service client est disponible 24/7 pour répondre à vos questions.</p>
+                    <p>Adresse :</p>
+                    <br> <!-- saut de ligne -->
+                    <p>5 RUE CHARLOT 75003 PARIS</p>
+                    
+                   
+                    <br> <!-- saut de ligne -->
+                    
+
+                    
+                    <button class="arrow-btn" onclick="goToPage1()"> Return to Page 1 </button>
+                    `;
+                    content.classList.add('show');
+            }, 500);
+           
+        }
+    </script>
+    <script>
+        function goToFAQ() {
+        const content = document.getElementById('content');
+        content.classList.remove('show'); // commence le fondu
+        setTimeout(() => {
+            content.innerHTML = `
+                   <h1>FAQ - Questions Fréquemment Posées</h1>
+                        <p>Voici quelques questions courantes :</p>
+
+                    <div class="faq-item">
+                        <details>
+                        <summary> Comment puis-je télécharger l'application ? </summary>
+                        <strong>Reponse:</strong><p> Vous pouvez la trouver sur l'App Store et Google Play.</p>
+                        </details>
+                    </div>
+
+                    <div class="faq-item">
+                        <details>
+                        <summary>L'application est-elle gratuite ? </summary>
+                        <strong>Reponse:</strong><p>Oui, l'application est entièrement gratuite à télécharger et à utiliser.</p>
+                        </details>
+                    </div>
+
+                    <div class="faq-item">
+                        <details>
+                        <summary>Puis-je utiliser l'application hors ligne ?</summary>
+                        <strong>Reponse:</strong><p> Certaines fonctionnalités nécessitent une connexion Internet.</p>
+                        </details>
+                    </div>
+
+                    <div class="faq-item">
+                        <details>
+                        <summary>Comment puis-je signaler un problème ?</summary>
+                        <strong>Reponse:</strong><p>Vous pouvez nous contacter via la page Contact.</p>
+                        </details>
+                    </div>
+
+            <button class="arrow-btn" onclick="goToPage1()">Return to Page 1</button>>
+        `;
+        content.classList.add('show');
+    }, 500);
+}
+</script>
+
+         <div class="navbar">
+            <button onclick="document.getElementById('menu').style.display =
+        (document.getElementById('menu').style.display === 'block') ? 'none' : 'block'">
+        <img src="https://i.postimg.cc/Z5XkrS4P/menu.png" alt="Menu" style="width:24px; height:24px;">
+        </button>
+
+
+            <ul id="menu" hidden>
+                <li onclick="goToHome()">Home</li>
+                <li onclick="goToAbout()">About </li>
+                <li onclick="goToContact()">Contact</li>
+                <li onclick="goToFAQ()" >FAQ</li>
+            </ul>
+        </div>
+        <h1>Uber Simulator</h1>
+        <p>Uber dans votre écran !</p>
+        <p>Le Simulator le plus réel au monde accompagné de sa touche RP !</p>
+        
+        <div class="install">
+
+        <a href="https://www.apple.com/fr/app-store/" target="_blank">
+
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Download_on_the_App_Store_Badge_FRCA_RGB_blk.svg/2560px-Download_on_the_App_Store_Badge_FRCA_RGB_blk.svg.png" width="40" height="20" alt="Image exemple">
+        </a>
+        <a href="https://play.google.com/store/games?device=windows&&utm_source=emea_Med&utm_medium=hasem&utm_content=Mar2425&utm_campaign=Evergreen&pcampaignid=MKT-EDR-emea-fr-1710138-Med-hasem-py-Evergreen-Mar2425-Text_Search_BKWS-id_104119_%7CEXA%7CONSEM_kwid_41905086&gad_source=1&gad_campaignid=22468437964&gclid=Cj0KCQjw_rPGBhCbARIsABjq9cf14rECK5OtqtXaE3ugZFMz4GTdCxr9KI5zEMmv5C3xCGXiPCCuSUEaAjD-EALw_wcB" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Google_Play_Store_badge_FR.svg/1280px-Google_Play_Store_badge_FR.svg.png" width="40" height="20" alt="Image exemple">
+        </a>
+        </div>
+        <div style="height: 23em;"></div>
+    
+        <div style="text-align: right;"></div>
+
+        <button class="arrow-btn" onclick="goToPage2()"> Page 2 </button>
+        <div style="height: 19em;"></div>
+    
+        <div style="text-align: right;"></div>
+        <p>&copy; 2025 Uber Simulator. All rights reserved.</p>
+    </div>
+
+    <script>
+        function goToPage2() {
+            const content = document.getElementById('content');
+            content.classList.remove('show'); // commence le fondu
+            setTimeout(() => {
+                content.innerHTML = `
+                    
+                    
+                    
+                    
+                    <img src="https://i.postimg.cc/rpZV6W9c/ubersimulator.png" width="600" height="300" alt="Uber Simulator">
+                    
+
+                <details>
+                    <summary>Futurs Mise a Jour !</summary>
+                    <p>Parcourez L'afrique, L'Europe et L'Amerique du Nord</p>
+                    <p>Interface de l'Application Uber</p>
+                    <p>Graphismes et Infrastructures Ameliorer</p>
+                    <p>Corrections de Bugs</p>
+                </details>
+                <details>
+                    <summary>Bientôt</summary>
+                    <strong>Vue d'interieur dans le gamos</strong>
+                    <p>Experience encore plus realiste</p>
+                    <p>Plus de details</p>
+                    <p>Plus de voitures</p>
+                    <p>Plus de missions</p>
+                    <p>Plus de clients</p>
+                    <p>Enbouteillages</p>
+                    <p>Durée de trajet comme en vrai</p>
+                    <p>Et bien plus encore...</p>
+                </details>
+                <details>
+                    <summary>Informations complémentaires : </summary>
+                    <ul>
+                        <li>Version actuelle : 1.0.5</li>
+                        <li>Date de sortie : 15 Janvier 2025</li>
+                        <li>Jeu conseillé et sponsorisé par <strong>Mastu</strong> et <strong>Inoxtag</strong></li>
+                        <li>Meilleur jeu du premier semestre 2025</li>
+                    </ul>
+                    </details>
+                    
+                        
+                    
+                    <br> <!-- saut de ligne -->
+
+
+                    <a class="back-link" onclick="goToPage1()"> Page 1 </a>
+                `;
+                content.classList.add('show'); // affiche avec fondu
+            }, 500);
+        }
+        function goToPage1() {
+            const content = document.getElementById('content');
+            content.classList.remove('show');
+            setTimeout(() => {
+                content.innerHTML = `
+                    <img src="https://turbologo.com/articles/wp-content/uploads/2019/12/Uber-car.png" alt="Image exemple">
+                    <h1>Bienvenue sur la Page d'accueil</h1>
+                    <p>Voici un exemple de contenu enrichi :</p>
+                    <button class="arrow-btn" onclick="goToPage1()"> Page 1 </button>
+                    `;
+                
+                
+                content.classList.add('show');
+            }, 500);
+           
+        }
+    </script>
+         <script>
+            function goToPage1() {
+                const content = document.getElementById('content');
+                content.classList.remove('show');
+                setTimeout(() => {
+                    content.innerHTML = `
+                         <h1>FAQ - Questions Fréquemment Posées</h1>
+                        <p>Voici quelques questions courantes :</p>
+
+                    <div class="faq-item">
+                        <details>
+                        <summary> Comment puis-je télécharger l'application ? </summary>
+                        <strong>Reponse:</strong><p> Vous pouvez la trouver sur l'App Store et Google Play.</p>
+                        </details>
+                    </div>
+
+                    <div class="faq-item">
+                        <details>
+                        <summary>L'application est-elle gratuite ? </summary>
+                        <strong>Reponse:</strong><p>Oui, l'application est entièrement gratuite à télécharger et à utiliser.</p>
+                        </details>
+                    </div>
+
+                    <div class="faq-item">
+                        <details>
+                        <summary>Puis-je utiliser l'application hors ligne ?</summary>
+                       
+                        <strong>Reponse:</strong><p> Certaines fonctionnalités nécessitent une connexion Internet.</p>
+                        </details>
+                    </div>
+
+                    <div class="faq-item">
+                        <details>
+                        <summary>Comment puis-je signaler un problème ?</summary>
+                        <strong>Reponse:</strong><p>Vous pouvez nous contacter via la page Contact.</p>
+                        </details>
+                    </div>
+
+
+
+            <button class="arrow-btn" onclick="goToPage1()">Return to Page 1</button>
+                        `;
+                
+                
+                content.classList.add('show');
+            }, 500);
+           
+        }
+    </script>    
+     <script>
+            function goToPage1() {
+                const content = document.getElementById('content');
+                content.classList.remove('show');
+                setTimeout(() => {
+                    content.innerHTML = `
+                         <h1>About Us</h1>
+                    <img src="https://i.postimg.cc/rpZV6W9c/ubersimulator.png" width="600" height="200" alt="Uber Simulator">
+                    <p>Uber Simulator est une application innovante qui vous permet de vivre l'expérience Uber directement depuis votre appareil. Que vous soyez un conducteur cherchant à maximiser vos revenus ou un passager souhaitant un trajet sûr et confortable, notre application est conçue pour répondre à vos besoins.</p>
+                    <p>Notre mission est de connecter les conducteurs et les passagers de manière efficace et sécurisée, tout en offrant une expérience utilisateur exceptionnelle.<strong>et parcourir le monde avec les meilleurs details possibles</strong></p>
+                    
+                    <p>Rejoignez-nous dans cette aventure et découvrez comment Uber Simulator peut transformer votre façon de voyager.</p>
+                    <button class="arrow-btn" onclick="goToPage1()"> Return to Page 1 </button>
+
+
+
+                    <button class="arrow-btn" onclick="goToPage1()">Return to Page 1</button>
+                        `;
+                
+                
+                content.classList.add('show');
+            }, 500);
+           
+        }
+    </script>  
+                   
+        
+        
+        
+        
+        
+        
+        
+        
+        
+       <script> 
+        function goToPage1() {
+            const content = document.getElementById('content');
+            content.classList.remove('show');
+            setTimeout(() => {
+                
+                content.innerHTML = `
+                 <div class="navbar">
+                    <button onclick="document.getElementById('menu').style.display =
+                    (document.getElementById('menu').style.display === 'block') ? 'none' : 'block'">
+                    <img src="https://i.postimg.cc/Z5XkrS4P/menu.png" alt="Menu" style="width:24px; height:24px;">
+                    </button>
+
+
+            <ul id="menu" hidden>
+                <li onclick="goToHome()">Home</li>
+                <li>About</li>
+                <li>Contact</li>
+                <li>FAQ</li>
+            </ul>
+        </div>
+                    <h1>Uber Simulator</h1>
+                    <p>Uber dans votre écran !</p>
+                    <p>Le Simulator le plus réel au monde accompagné de sa touche RP !</p>
+                    
+                    <div class="install">
+                    <a href="https://www.apple.com/fr/app-store/" target="_blank">
+
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Download_on_the_App_Store_Badge_FRCA_RGB_blk.svg/2560px-Download_on_the_App_Store_Badge_FRCA_RGB_blk.svg.png" width="40" height="20" alt="Image exemple">
+                    </a>
+                    <a href="https://play.google.com/store/games?device=windows&&utm_source=emea_Med&utm_medium=hasem&utm_content=Mar2425&utm_campaign=Evergreen&pcampaignid=MKT-EDR-emea-fr-1710138-Med-hasem-py-Evergreen-Mar2425-Text_Search_BKWS-id_104119_%7CEXA%7CONSEM_kwid_41905086&gad_source=1&gad_campaignid=22468437964&gclid=Cj0KCQjw_rPGBhCbARIsABjq9cf14rECK5OtqtXaE3ugZFMz4GTdCxr9KI5zEMmv5C3xCGXiPCCuSUEaAjD-EALw_wcB" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Google_Play_Store_badge_FR.svg/1280px-Google_Play_Store_badge_FR.svg.png" width="40" height="20" alt="Image exemple">
+                    </a>
+                    </div>
+                    <div style="height: 23em;"></div>
+                    <div style="text-align: right;"></div>
+
+
+                    <button class="arrow-btn" onclick="goToPage2()"> Page 2 </button>
+                    <div style="height: 19em;"></div>
+    
+                    <div style="text-align: right;"></div>
+                    <p>&copy; 2025 Uber Simulator. All rights reserved.</p>
+                `;
+                
+                content.classList.add('show');
+            }, 500);
+            
+           
+        }
+        </script>
+           
+      <script>
+            function goToPage1() {
+                 const content = document.getElementById('content');
+                content.classList.remove('show');
+                setTimeout(() => {
+                content.innerHTML = `
+                 <div class="navbar">
+                    <button onclick="document.getElementById('menu').style.display =
+                    (document.getElementById('menu').style.display === 'block') ? 'none' : 'block'">
+                    <img src="https://i.postimg.cc/Z5XkrS4P/menu.png" alt="Menu" style="width:24px; height:24px;">
+                    </button>
+
+
+            
+            <ul id="menu" hidden>
+                <li onclick="goToHome()">Home</li>
+                <li onclick="goToAbout()">About </li>
+                <li onclick="goToContact()">Contact</li>
+                <li onclick="goToFAQ()" >FAQ</li>
+            
+            </ul>
+        </div>
+                    <h1>Uber Simulator</h1>
+                    <p>Uber dans votre écran !</p>
+                    <p>Le Simulator le plus réel au monde accompagné de sa touche RP !</p>
+                    
+                    <div class="install">
+
+                    <a href="https://www.apple.com/fr/app-store/" target="_blank">
+
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Download_on_the_App_Store_Badge_FRCA_RGB_blk.svg/2560px-Download_on_the_App_Store_Badge_FRCA_RGB_blk.svg.png" width="40" height="20" alt="Image exemple">
+                    </a>
+
+                    <a href="https://play.google.com/store/games?device=windows&&utm_source=emea_Med&utm_medium=hasem&utm_content=Mar2425&utm_campaign=Evergreen&pcampaignid=MKT-EDR-emea-fr-1710138-Med-hasem-py-Evergreen-Mar2425-Text_Search_BKWS-id_104119_%7CEXA%7CONSEM_kwid_41905086&gad_source=1&gad_campaignid=22468437964&gclid=Cj0KCQjw_rPGBhCbARIsABjq9cf14rECK5OtqtXaE3ugZFMz4GTdCxr9KI5zEMmv5C3xCGXiPCCuSUEaAjD-EALw_wcB" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Google_Play_Store_badge_FR.svg/1280px-Google_Play_Store_badge_FR.svg.png" width="40" height="20" alt="Image exemple">
+                    </a>
+                    </div>
+
+                    <div style="height: 23em;"></div>
+    
+                    <div style="text-align: right;"></div>
+
+                    <button class="arrow-btn" onclick="goToPage2()"> Page 2 </button>
+                    <div style="height: 19em;"></div>
+    
+                    <div style="text-align: right;"></div>
+                    <p>&copy; 2025 Uber Simulator. All rights reserved.</p>
+                    </div>
+                    `;
+                
+                
+                content.classList.add('show');
+            }, 500);
+           
+        }
+    </script>
+    
+</body>
+</html>
