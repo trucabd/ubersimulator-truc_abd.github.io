@@ -194,7 +194,7 @@
         
     }
     .fond{
-        background-image: url("https://i.postimg.cc/YCJzJN7B/ubersimulator.png")
+        background-image: url("https://i.postimg.cc/YCJzJN7B/ubersimulator.png");
         background-size: cover; /* couvre tout l'écran */
         background-position: center; /* centre l'image */
         background-repeat: no-repeat; /* évite la répétition */
@@ -458,14 +458,14 @@
            
         }
     </script>
-
+        
          <div class="navbar">
          
             <button onclick="document.getElementById('menu').style.display =
         (document.getElementById('menu').style.display === 'block') ? 'none' : 'block'">
         Menu
         </button>
-
+        
 
             <ul id="menu" hidden>
                 <li onclick="goToHome()">Mises a jour</li>
@@ -583,6 +583,7 @@
         function goToPage1() {
             const content = document.getElementById('content');
             content.classList.remove('show');
+            document.body.classList.remove('fond');
             setTimeout(() => {
                 content.innerHTML = `
                     <div class="install">
@@ -611,6 +612,7 @@
             function goToPage1() {
                 const content = document.getElementById('content');
                 content.classList.remove('show');
+                document.body.classList.remove('fond');
                 setTimeout(() => {
                     content.innerHTML = `
                 <div class="install">
@@ -677,6 +679,7 @@
             function goToPage1() {
                 const content = document.getElementById('content');
                 content.classList.remove('show');
+                document.body.classList.remove('fond');
                 setTimeout(() => {
                     content.innerHTML = `
                     <div class="install">
@@ -722,6 +725,7 @@
         function goToPage1() {
             const content = document.getElementById('content');
             content.classList.remove('show');
+            document.body.classList.remove('fond');
             setTimeout(() => {
                 
                 content.innerHTML = `
@@ -774,6 +778,7 @@
             function goToPage1() {
                  const content = document.getElementById('content');
                 content.classList.remove('show');
+                document.body.classList.remove('fond');
                 setTimeout(() => {
                 content.innerHTML = `
                  <div class="navbar">
