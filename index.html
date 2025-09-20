@@ -196,70 +196,187 @@
         right: 0px;        /* Collé à droite */
         
     }
-    .fond{
-        background-image: url("https://i.postimg.cc/253TTsHT/wmremove-transformed.png");
-        background-size: cover; /* couvre tout l'écran */
-        background-position: center; /* centre l'image */
-        background-repeat: no-repeat; /* évite la répétition */
+    /* Namespace all rules under .auth-login to avoid conflicts */
+.auth-login {
+  --bg: #0f0f12;
+  --bg-2: #17171c;
+  --accent: #ff7a18;
+  --accent-2: #ffb24d;
+  --text: #e8e8ef;
+  --muted: #a8a8b3;
+  --field: #1e1e24;
+  --stroke: #2a2a33;
+  --focus: #ffd49a;
 
-    }
-    .install1 {
-        position: fixed;
-        width: 60vh;
-        
-        height: 10vh, 80px;
-        bottom: 0;       /* Collé en bas */
-        left: 0;        /* Collé à droite */
-        
-    }
-    /* Appliqué uniquement si .page-login est présent */
-    .page-login .loginpw-field {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        background: rgba(0, 0, 0, 0.6);
-        border: 1px solid #444;
-        border-radius: 10px;
-        padding: 12px 16px;
-        max-width: 400px;
-        margin: 20px auto;
-        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  min-height: 100dvh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: radial-gradient(1200px 600px at 85% 30%, rgba(255, 122, 24, 0.15), transparent 60%),
+              linear-gradient(180deg, #0b0b0e 0%, #141419 100%);
+  color: var(--text);
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
-    .page-login .loginpw-field:focus-within {
-        border-color: #ff7a18;
-        box-shadow: 0 0 0 4px rgba(255, 122, 24, 0.3);
+.auth-login__card {
+  width: min(980px, 100%);
+  background:
+    linear-gradient(135deg, rgba(255, 122, 24, 0.12), transparent 40%) border-box,
+    linear-gradient(180deg, var(--bg-2), var(--bg)) border-box;
+  border: 1px solid var(--stroke);
+  border-radius: 18px;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  box-shadow:
+    0 10px 30px rgba(0,0,0,0.35),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.02);
 }
 
-    .page-login .loginpw-input {
-        flex: 1;
-        background: transparent;
-        border: none;
-        outline: none;
-        color: white;
-        font-size: 16px;
+.auth-login__left {
+  padding: 40px 36px;
+  background: linear-gradient(180deg, rgba(255, 122, 24, 0.06), rgba(255, 122, 24, 0)) , var(--bg-2);
 }
 
-    .page-login .loginpw-input::placeholder {
-        color: #aaa;
+.auth-login__right {
+  padding: 48px 40px;
+  background: radial-gradient(600px 420px at 70% 30%, rgba(255, 178, 77, 0.22), rgba(255, 122, 24, 0.06) 45%, transparent 60%),
+              linear-gradient(180deg, #15151b, #0f0f12);
+  display: grid;
+  align-content: center;
+  gap: 12px;
 }
 
-    .page-login .loginpw-toggle {
-        background: transparent;
-        border: none;
-        color: #ccc;
-        cursor: pointer;
-        font-size: 18px;
-        padding: 4px;
-        border-radius: 6px;
-        transition: background 0.2s ease, color 0.2s ease;
+.auth-login__title {
+  margin: 0 0 18px;
+  font-size: 26px;
+  letter-spacing: 0.2px;
 }
 
-    .page-login .loginpw-toggle:hover {
-        background: rgba(255, 255, 255, 0.1);
-        color: white;
+.auth-login__welcome {
+  margin: 0;
+  font-size: 30px;
+  color: white;
+  letter-spacing: 0.3px;
 }
 
+.auth-login__subtitle {
+  margin: 6px 0 0;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.auth-login__form {
+  margin-top: 10px;
+  display: grid;
+  gap: 16px;
+}
+
+.auth-login__field {
+  display: grid;
+  gap: 8px;
+}
+
+.auth-login__label {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.auth-login__inputwrap {
+  position: relative;
+  display: grid;
+  grid-template-columns: 36px 1fr 40px;
+  align-items: center;
+  background: var(--field);
+  border: 1px solid var(--stroke);
+  border-radius: 12px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.auth-login__icon {
+  display: grid;
+  place-items: center;
+  color: #d5d5df;
+  opacity: 0.9;
+  font-size: 16px;
+}
+
+.auth-login__input {
+  height: 46px;
+  padding: 0 12px 0 0;
+  background: transparent;
+  border: 0;
+  color: var(--text);
+  font-size: 15px;
+  outline: none;
+}
+
+.auth-login__toggle {
+  appearance: none;
+  background: transparent;
+  border: 0;
+  color: #d5d5df;
+  cursor: pointer;
+  font-size: 16px;
+  opacity: 0.8;
+  padding-right: 10px;
+}
+
+.auth-login__inputwrap:focus-within {
+  border-color: var(--focus);
+  box-shadow: 0 0 0 3px rgba(255, 178, 77, 0.2);
+}
+
+.auth-login__btn {
+  height: 46px;
+  border: 0;
+  border-radius: 12px;
+  cursor: pointer;
+  background: linear-gradient(180deg, var(--accent), var(--accent-2));
+  color: #2a1706;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  transition: transform 0.06s ease, filter 0.2s ease;
+}
+
+.auth-login__btn:hover {
+  filter: brightness(1.05);
+}
+
+.auth-login__btn:active {
+  transform: translateY(1px);
+}
+
+.auth-login__hint {
+  margin: 10px 0 0;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.auth-login__link {
+  color: var(--accent-2);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.auth-login__link:hover {
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 860px) {
+  .auth-login__card {
+    grid-template-columns: 1fr;
+  }
+  .auth-login__right {
+    order: -1;
+    padding: 32px 28px;
+    text-align: center;
+  }
+  .auth-login__left {
+    padding: 28px;
+  }
+}
 
 
     
@@ -348,12 +465,7 @@
            
         }
     </script>
-    <script>
-    function togglePassword() {
-        const input = document.getElementById("motdepasse");
-        input.type = input.type === "password" ? "text" : "password";
-    }
-    </script>
+   
     <script>
         function goToLog() {
             const content = document.getElementById('content');
@@ -377,12 +489,67 @@
                         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Google_Play_Store_badge_FR.svg/1280px-Google_Play_Store_badge_FR.svg.png" width="40" height="20" alt="Image exemple">
                         </a>
                         </div>
-                     <div class="loginpw-field">
-                        <input type="password" class="loginpw-input" placeholder="Mot de passe" id="motdepasse">
-                        <button type="button" class="loginpw-toggle" onclick="togglePassword()" aria-label="Afficher/Masquer le mot de passe">
-                         👁
-                        </button>
-                        </div>
+                        <!-- Login component wrapper (no <body>) -->
+<div class="auth-login">
+  <div class="auth-login__card">
+    <div class="auth-login__left">
+      <h2 class="auth-login__title">Connectez-vous</h2>
+
+      <form class="auth-login__form" action="#" method="post" autocomplete="on">
+        <label class="auth-login__field">
+          <span class="auth-login__label">Nom d’utilisateur</span>
+          <div class="auth-login__inputwrap">
+            <span class="auth-login__icon" aria-hidden="true">👤</span>
+            <input
+              class="auth-login__input"
+              type="text"
+              name="username"
+              placeholder="Votre identifiant"
+              required
+            />
+          </div>
+        </label>
+
+        <label class="auth-login__field">
+          <span class="auth-login__label">Mot de passe</span>
+          <div class="auth-login__inputwrap">
+            <span class="auth-login__icon" aria-hidden="true">🔒</span>
+            <input
+              class="auth-login__input"
+              type="password"
+              name="password"
+              placeholder="Votre mot de passe"
+              required
+              id="auth-login-password"
+            />
+            <button
+              class="auth-login__toggle"
+              type="button"
+              aria-label="Afficher/masquer le mot de passe"
+              data-toggle-password="auth-login-password"
+            >👁️</button>
+          </div>
+        </label>
+
+        <button class="auth-login__btn" type="submit">Se connecter</button>
+
+        <p class="auth-login__hint">
+          Vous n’avez pas de compte ?
+          <a class="auth-login__link" href="/signup">Inscription</a>
+        </p>
+      </form>
+    </div>
+
+    <div class="auth-login__right">
+      <h3 class="auth-login__welcome">Welcome Back!</h3>
+      <p class="auth-login__subtitle">
+        We are happy to have you with us again. If you need anything, we are here to help.
+      </p>
+    </div>
+  </div>
+</div>
+
+                     
 
                        
                     
