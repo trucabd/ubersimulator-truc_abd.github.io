@@ -212,176 +212,54 @@
         left: 0;        /* Collé à droite */
         
     }
-    :root{
-      --bg:#0f1115;
-      --panel:#151922;
-      --text:#e6e8ee;
-      --muted:#98a2b3;
-      --accent:#ff7a18;
-      --accent-2:#ffb547;
-      --input:#0f131a;
-      --input-br:#232a36;
-      --focus:#ffd699;
-      --error:#ff4d4d;
-      --shadow: 0 10px 30px rgba(0,0,0,.35);
-    }
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;
-      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-      background: radial-gradient(1200px 800px at 85% 50%, rgba(255,122,24,.15), transparent 50%),
-                  radial-gradient(800px 600px at 80% 60%, rgba(255,181,71,.12), transparent 60%),
-                  var(--bg);
-      color:var(--text);
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
+    /* Appliqué uniquement si .page-login est présent */
+.page-login .loginpw-field {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid #444;
+  border-radius: 10px;
+  padding: 12px 16px;
+  max-width: 400px;
+  margin: 20px auto;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
 
-    .wrap{
-      min-height:100%;
-      display:grid;
-      place-items:center;
-      padding:24px;
-    }
+.page-login .loginpw-field:focus-within {
+  border-color: #ff7a18;
+  box-shadow: 0 0 0 4px rgba(255, 122, 24, 0.3);
+}
 
-    .card{
-      width:100%;
-      max-width:1000px;
-      background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.00)) border-box;
-      border:1px solid rgba(255,255,255,.06);
-      border-radius:16px;
-      overflow:hidden;
-      box-shadow:var(--shadow);
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-    }
+.page-login .loginpw-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: white;
+  font-size: 16px;
+}
 
-    /* Left: form */
-    .left{
-      background:var(--panel);
-      padding:48px;
-      display:flex;
-      flex-direction:column;
-      gap:28px;
-    }
+.page-login .loginpw-input::placeholder {
+  color: #aaa;
+}
 
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:12px;
-      font-weight:700;
-      letter-spacing:.3px;
-    }
-    .brand .logo{
-      width:36px; height:36px; border-radius:10px;
-      background: conic-gradient(from 210deg at 50% 50%, var(--accent), var(--accent-2));
-      box-shadow: 0 4px 18px rgba(255,122,24,.45), inset 0 0 20px rgba(255,181,71,.35);
-    }
+.page-login .loginpw-toggle {
+  background: transparent;
+  border: none;
+  color: #ccc;
+  cursor: pointer;
+  font-size: 18px;
+  padding: 4px;
+  border-radius: 6px;
+  transition: background 0.2s ease, color 0.2s ease;
+}
 
-    .title{margin:8px 0 0 0; font-size:28px}
-    .subtitle{margin:0; color:var(--muted)}
+.page-login .loginpw-toggle:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+}
 
-    .form{
-      margin-top:8px;
-      display:flex; flex-direction:column; gap:16px;
-    }
-    .field{
-      display:flex; align-items:center; gap:10px;
-      background:var(--input);
-      border:1px solid var(--input-br);
-      border-radius:12px;
-      padding:12px 14px;
-      transition:border-color .2s, box-shadow .2s, background .2s;
-    }
-    .field:focus-within{
-      border-color:var(--accent);
-      box-shadow:0 0 0 4px rgba(255,122,24,.18);
-    }
-
-    .icon{
-      width:20px; height:20px; flex:0 0 20px; color:#cbd5e1;
-    }
-    .input{
-      appearance:none; border:0; outline:0;
-      flex:1; background:transparent; color:var(--text);
-      font-size:15px;
-    }
-    .input::placeholder{color:#7c889a}
-
-    .password-wrap{
-      display:flex; align-items:center; gap:10px; width:100%;
-    }
-    .toggle{
-      border:0; background:transparent; color:#cbd5e1;
-      cursor:pointer; padding:6px; border-radius:8px;
-    }
-    .toggle:hover{color:#ffffff; background:rgba(255,255,255,.06)}
-
-    .error{display:none; color:var(--error); font-size:13px; margin-top:-4px}
-    .btn{
-      border:0; cursor:pointer;
-      background:linear-gradient(90deg, var(--accent), var(--accent-2));
-      color:#1a1208; font-weight:700;
-      padding:14px 18px; border-radius:12px; font-size:16px;
-      transition:transform .05s ease, filter .2s ease;
-    }
-    .btn:active{transform:translateY(1px)}
-    .btn:hover{filter:brightness(1.02)}
-
-    .meta{
-      display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap;
-      color:var(--muted); font-size:14px;
-    }
-    .link{
-      color:var(--accent-2); text-decoration:none; font-weight:600;
-    }
-    .link:hover{text-decoration:underline}
-
-    /* Right: welcome */
-    .right{
-      position:relative;
-      padding:48px;
-      background: radial-gradient(120% 120% at 70% 30%, rgba(255,181,71,.25) 0%, rgba(255,122,24,.20) 30%, rgba(0,0,0,0) 70%),
-                  linear-gradient(135deg, #1c0f07 0%, #20140b 40%, #1a1110 100%);
-      display:flex; flex-direction:column; justify-content:center;
-      isolation:isolate;
-    }
-
-    .welcome{
-      max-width:420px;
-    }
-    .welcome h2{
-      margin:0 0 12px 0; font-size:36px;
-      font-weight:800; letter-spacing:.2px;
-      background:linear-gradient(90deg, #fff, #ffd9a6 60%, #ffc074 100%);
-      -webkit-background-clip:text;
-      background-clip:text;
-      color:transparent;
-    }
-    .welcome p{
-      margin:0; color:#f4efe9; opacity:.9; line-height:1.6;
-    }
-
-    .glow{
-      position:absolute; inset:-20%;
-      background: radial-gradient(40% 40% at 80% 50%, rgba(255,122,24,.35) 0%, transparent 80%),
-                  radial-gradient(25% 25% at 70% 70%, rgba(255,181,71,.25) 0%, transparent 80%);
-      z-index:-1; filter:blur(20px);
-    }
-
-    /* Responsive */
-    @media (max-width: 900px){
-      .card{grid-template-columns:1fr}
-      .right{order:-1; min-height:260px; padding:36px}
-      .left{padding:32px}
-    }
-    @media (max-width: 420px){
-      .title{font-size:24px}
-      .welcome h2{font-size:30px}
-      .field{padding:10px 12px}
-      .btn{width:100%}
-    }
 
 
     
@@ -493,30 +371,19 @@
                         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Google_Play_Store_badge_FR.svg/1280px-Google_Play_Store_badge_FR.svg.png" width="40" height="20" alt="Image exemple">
                         </a>
                     </div>
-                     <script>
-                        // Toggle visibility du mot de passe
-                        const pwd = document.getElementById('password');
-                        const toggle = document.getElementById('togglePwd');
-                        toggle.addEventListener('click', () => {
-                        const isPass = pwd.type === 'password';
-                        pwd.type = isPass ? 'text' : 'password';
-                        toggle.setAttribute('aria-label', isPass ? 'Masquer le mot de passe' : 'Afficher le mot de passe');
-                    });
+                     <div class="loginpw-field">
+                        <input type="password" class="loginpw-input" placeholder="Mot de passe" id="motdepasse">
+                        <button type="button" class="loginpw-toggle" onclick="togglePassword()" aria-label="Afficher/Masquer le mot de passe">
+                         👁
+                        </button>
+                        </div>
 
-                        // Validation très simple côté client (démo)
-                        const form = document.querySelector('form.form');
-                        const errorMsg = document.getElementById('errorMsg');
-                        form.addEventListener('submit', (e) => {
-                        const u = form.username.value.trim();
-                        const p = form.password.value.trim();
-                    if(!u || !p){
-                        e.preventDefault();
-                        errorMsg.style.display = 'block';
-                        setTimeout(() => errorMsg.style.display = 'none', 2500);
+                        <script>
+                        function togglePassword() {
+                        const input = document.getElementById("motdepasse");
+                        input.type = input.type === "password" ? "text" : "password";
                         }
-                 });
-            </script>
-
+                        </script>
                     
                     
                     
