@@ -503,11 +503,14 @@
 
     <script>
         function goToPage2() {
+            
             const content = document.getElementById('content');
             content.classList.remove('show'); // commence le fondu
+            <div class="fond">
             setTimeout(() => {
+                
                 content.innerHTML = `
-                <div class="fond">
+                
                 <div class="install">
 
                     <a href="https://www.apple.com/fr/app-store/" target="_blank">
@@ -570,9 +573,10 @@
 
 
                     <a class="back-link" onclick="goToPage1()"> Page 1 </a>
-                    </div>
+                    
                 `;
                 content.classList.add('show'); // affiche avec fondu
+                </div>
             }, 500);
         }
         function goToPage1() {
