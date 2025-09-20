@@ -213,51 +213,51 @@
         
     }
     /* Appliqué uniquement si .page-login est présent */
-.page-login .loginpw-field {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  background: rgba(0, 0, 0, 0.6);
-  border: 1px solid #444;
-  border-radius: 10px;
-  padding: 12px 16px;
-  max-width: 400px;
-  margin: 20px auto;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    .page-login .loginpw-field {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        background: rgba(0, 0, 0, 0.6);
+        border: 1px solid #444;
+        border-radius: 10px;
+        padding: 12px 16px;
+        max-width: 400px;
+        margin: 20px auto;
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.page-login .loginpw-field:focus-within {
-  border-color: #ff7a18;
-  box-shadow: 0 0 0 4px rgba(255, 122, 24, 0.3);
+    .page-login .loginpw-field:focus-within {
+        border-color: #ff7a18;
+        box-shadow: 0 0 0 4px rgba(255, 122, 24, 0.3);
 }
 
-.page-login .loginpw-input {
-  flex: 1;
-  background: transparent;
-  border: none;
-  outline: none;
-  color: white;
-  font-size: 16px;
+    .page-login .loginpw-input {
+        flex: 1;
+        background: transparent;
+        border: none;
+        outline: none;
+        color: white;
+        font-size: 16px;
 }
 
-.page-login .loginpw-input::placeholder {
-  color: #aaa;
+    .page-login .loginpw-input::placeholder {
+        color: #aaa;
 }
 
-.page-login .loginpw-toggle {
-  background: transparent;
-  border: none;
-  color: #ccc;
-  cursor: pointer;
-  font-size: 18px;
-  padding: 4px;
-  border-radius: 6px;
-  transition: background 0.2s ease, color 0.2s ease;
+    .page-login .loginpw-toggle {
+        background: transparent;
+        border: none;
+        color: #ccc;
+        cursor: pointer;
+        font-size: 18px;
+        padding: 4px;
+        border-radius: 6px;
+        transition: background 0.2s ease, color 0.2s ease;
 }
 
-.page-login .loginpw-toggle:hover {
-  background: rgba(255, 255, 255, 0.1);
-  color: white;
+    .page-login .loginpw-toggle:hover {
+        background: rgba(255, 255, 255, 0.1);
+        color: white;
 }
 
 
@@ -349,6 +349,12 @@
         }
     </script>
     <script>
+    function togglePassword() {
+        const input = document.getElementById("motdepasse");
+        input.type = input.type === "password" ? "text" : "password";
+    }
+    </script>
+    <script>
         function goToLog() {
             const content = document.getElementById('content');
             content.classList.remove('show'); // commence le fondu
@@ -370,7 +376,7 @@
                         <a href="https://play.google.com/store/games?device=windows&&utm_source=emea_Med&utm_medium=hasem&utm_content=Mar2425&utm_campaign=Evergreen&pcampaignid=MKT-EDR-emea-fr-1710138-Med-hasem-py-Evergreen-Mar2425-Text_Search_BKWS-id_104119_%7CEXA%7CONSEM_kwid_41905086&gad_source=1&gad_campaignid=22468437964&gclid=Cj0KCQjw_rPGBhCbARIsABjq9cf14rECK5OtqtXaE3ugZFMz4GTdCxr9KI5zEMmv5C3xCGXiPCCuSUEaAjD-EALw_wcB" target="_blank">
                         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Google_Play_Store_badge_FR.svg/1280px-Google_Play_Store_badge_FR.svg.png" width="40" height="20" alt="Image exemple">
                         </a>
-                    </div>
+                        </div>
                      <div class="loginpw-field">
                         <input type="password" class="loginpw-input" placeholder="Mot de passe" id="motdepasse">
                         <button type="button" class="loginpw-toggle" onclick="togglePassword()" aria-label="Afficher/Masquer le mot de passe">
@@ -378,12 +384,7 @@
                         </button>
                         </div>
 
-                        <script>
-                        function togglePassword() {
-                        const input = document.getElementById("motdepasse");
-                        input.type = input.type === "password" ? "text" : "password";
-                        }
-                        </script>
+                       
                     
                     
                     
